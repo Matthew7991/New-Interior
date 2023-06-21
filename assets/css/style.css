@@ -103,9 +103,10 @@ ol {
 	--font-logo: "Alegreya SC Medium";
 	--font-hero-heading: "Nixie One";
 	--font-hero-heading-sub: "Alegreya SC Regular";
-	--padding-page: 128px;
+	--padding-section-horizontal: 128px;
+	--padding-section-vertical: 64px;
 
-	--color-white: #fff;
+	--color-text-default-bright: #fff;
 	--color-text-default: #6a6a6a;
 	--color-heading-default: #3a4f52;
 	--bg-color-img: #c3c9cc;
@@ -122,27 +123,302 @@ ol {
 body {
 	font-family: var(--font-default);
 	font-size: 0.875rem;
-	color: var(--color-default);
+	color: var(--color-text-default);
 	background-color: var(--bg-color-body);
+}
+
+section:not(.hero),
+footer {
+	padding: var(--padding-section-vertical) var(--padding-section-horizontal);
+}
+
+.card {
+	background-color: var(--bg-color-card);
+}
+
+.flex {
+	display: flex;
+	justify-content: space-around;
+	gap: 32px;
+	margin-top: var(--padding-section-vertical);
 }
 
 h1 {
 	font-family: var(--font-hero-heading);
 	font-size: 3.5rem;
+	color: var(--color-text-default-bright);
+	font-weight: 400;
 }
 
 h2 {
 	font-family: var(--font-accent);
 	font-size: 2.25rem;
 	color: var(--color-heading-default);
+	font-weight: 500;
+}
+
+h3 {
+	font-family: var(--font-accent);
+	font-weight: 500;
+	font-size: 1.875rem;
 }
 
 a {
 	color: var(--color-links);
 }
 
+a:hover {
+	text-decoration: underline;
+}
+
+button {
+	cursor: pointer;
+	padding: 0.75em 1rem;
+	border: var(--color-heading-default) solid 2px;
+	color: var(--color-heading-default);
+	font-family: var(--font-default);
+	font-size: 1.125rem;
+}
+
+button:hover {
+	background-color: var(--bg-color-footer);
+	color: var(--color-text-default-bright);
+}
+
+.btn-transparent {
+	background-color: transparent;
+	color: var(--color-text-default-bright);
+	border-color: var(--color-text-default-bright);
+}
+
+.btn-transparent:hover {
+	background-color: var(--color-text-default-bright);
+	color: var(--color-text-default);
+}
 /* 
 ===========================================
                     header
 ===========================================
 */
+
+header {
+	height: 100vh;
+	background: url(../img/hero.png) center / cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+nav {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 32px;
+}
+
+nav a {
+	color: var(--color-text-default-bright);
+	font-family: var(--font-logo);
+	font-size: 2.25rem;
+}
+
+.hamburger {
+	font-size: 2.25rem;
+	color: var(--color-text-default-bright);
+	cursor: pointer;
+}
+
+header > div p {
+	font-family: var(--font-hero-heading-sub);
+	color: var(--color-hero-heading-sub);
+	text-align: center;
+	font-size: 22px;
+}
+
+/* 
+===========================================
+                    main
+===========================================
+===========================================
+                    works
+===========================================
+*/
+
+.heading div {
+	display: flex;
+	justify-content: space-between;
+}
+
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 32px;
+	margin-top: var(--padding-section-vertical);
+}
+
+.gallery > div {
+	height: 300px;
+	overflow: hidden;
+	background-color: var(--bg-color-img);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.gallery > div > div {
+	display: none;
+}
+
+/* 
+===========================================
+                    service
+===========================================
+*/
+
+.services {
+	background: url(../img/services.png) center / cover fixed;
+	text-align: center;
+	color: var(--color-text-default-bright);
+}
+
+.services h2 {
+	color: var(--color-text-default-bright);
+	margin-bottom: 16px;
+}
+.services .flex {
+	padding: 32px;
+}
+
+.services article {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.services article h3 {
+	margin-bottom: 32px;
+}
+
+/* 
+===========================================
+                    blog
+===========================================
+*/
+
+.blog {
+}
+
+.date {
+	font-size: 0.875rem;
+	font-style: italic;
+}
+
+.blog article div {
+	margin-top: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+/* 
+===========================================
+                    lorem
+===========================================
+*/
+
+.lorem {
+	background: url(../img/4f6768d16f4d0914c7b5ddb743f600df2edc50bf.png) center /
+		cover fixed;
+}
+
+.lorem .card {
+	padding: 32px;
+	text-align: center;
+}
+
+.lorem .card h2 {
+	color: var(--color-text-default-bright);
+}
+
+.lorem .card button {
+	margin-top: var(--padding-section-vertical);
+}
+
+/* 
+===========================================
+                    testimonials
+===========================================
+*/
+.testimonials article {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 16px;
+}
+.testimonials img {
+	height: 150px;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.name {
+	font-weight: 700;
+}
+
+/* 
+===========================================
+                    contact
+===========================================
+*/
+
+.contact {
+	background: url(../img/contact.png) center / cover fixed;
+	text-align: center;
+}
+
+form {
+	padding: 32px;
+}
+
+form h2 {
+	color: var(--color-text-default-bright);
+}
+
+form p {
+	color: var(--color-text-default-bright);
+}
+
+form > div {
+	margin-top: var(--padding-section-vertical);
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+input,
+textarea {
+	min-width: 50%;
+	background-color: var(--bg-color-input);
+	color: var(--color-text-default-bright);
+	padding: 0.5em;
+	border: 1px solid var(--color-input);
+}
+
+form button {
+	align-self: center;
+}
+
+/* 
+===========================================
+                    footer
+===========================================
+*/
+
+footer {
+	background-color: var(--bg-color-footer);
+	color: var(--color-text-default-bright);
+}

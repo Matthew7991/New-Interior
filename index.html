@@ -9,8 +9,8 @@
 	<body>
 		<header>
 			<nav>
-				<h2>New Interior.</h2>
-				<div>&#9776</div>
+				<a href="#">New Interior.</a>
+				<div class="hamburger">&#9776</div>
 			</nav>
 			<div>
 				<h1>SLIM & STYLISH</h1>
@@ -20,58 +20,60 @@
 		<main>
 			<section class="works">
 				<div>
-					<div>
-						<h2>Our Latest Works</h2>
+					<div class="heading">
+						<div>
+							<h2>Our Latest Works</h2>
+							<button href="#">View All</button>
+						</div>
 						<p>Take a look at some of our recent products</p>
 					</div>
-					<button>View All</button>
 				</div>
 				<div class="gallery">
 					<div>
 						<img src="./assets/img/works1.png" alt="">
 						<div>
-							<button>Lorem Rocks</button>
+							<button href="#">Lorem Rocks</button>
 						</div>
 					</div>
 					<div>
 						<img src="./assets/img/works2.png" alt="">
 						<div>
-							<button>Lorem Rocks</button>
+							<button href="#">Lorem Rocks</button>
 						</div>
 					</div>
 					<div>
 						<img src="./assets/img/works3.png" alt="">
 						<div>
-							<button>Lorem Rocks</button>
+							<button href="#">Lorem Rocks</button>
 						</div>
 					</div>
 					<div>
 						<img src="./assets/img/works4.png" alt="">
 						<div>
-							<button>Lorem Rocks</button>
+							<button href="#">Lorem Rocks</button>
 						</div>
 					</div>
 					<div>
 						<img src="./assets/img/works5.png" alt="">
 						<div>
-							<button>Lorem Rocks</button>
+							<button href="#">Lorem Rocks</button>
 						</div>
 					</div>
 					<div>
 						<img src="./assets/img/works6.png" alt="">
 						<div>
-							<button>Lorem Rocks</button>
+							<button href="#">Lorem Rocks</button>
 						</div>
 					</div>
 				</div>
 			</section>
 			<section class="services">
-				<div>
+				<div class="card">
 					<div>
 						<h2>Our Services</h2>
 						<p>A little about what we do</p>
 					</div>
-					<div class="card">
+					<div class="flex">
 						<article>
 							<img src="./assets/img/plane.svg" alt="">
 							<h3>Concepts</h3>
@@ -100,14 +102,14 @@
 				</div>
 			</section>
 			<section class="blog">
-				<div>
+				<div class="heading">
 					<div>
 						<h2>From the Blog</h2>
-						<p>Keep up with the latest happenings.</p>
+						<button href="#">View All</button>
 					</div>
-					<button>View All</button>
+					<p>Keep up with the latest happenings.</p>
 				</div>
-				<div>
+				<div class="flex">
 					<article>
 						<img src="./assets/img/blog1.png" alt="">
 						<div>
@@ -116,7 +118,7 @@
 							<p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi
 								mattis, vulputate nunc nec, sodales nibh. Etiam nulla
 								magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
-							<a href="">Read More</a>
+							<a href="#">Read More</a>
 						</div>
 					</article>
 					<article>
@@ -127,7 +129,7 @@
 							<p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi
 								mattis, vulputate nunc nec, sodales nibh. Etiam nulla
 								magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
-							<a href="">Read More</a>
+							<a href="#">Read More</a>
 						</div>
 					</article>
 					<article>
@@ -138,19 +140,19 @@
 							<p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi
 								mattis, vulputate nunc nec, sodales nibh. Etiam nulla
 								magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
-							<a href="">Read More</a>
+							<a href="#">Read More</a>
 						</div>
 					</article>
 				</div>
 			</section>
-			<section class="parallax">
+			<section class="lorem">
 				<div class="card">
 					<h2>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc
 						nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit.</h2>
-					<button>Get a free quote</button>
+					<button href="#" class="btn-transparent">Get a free quote</button>
 				</div>
 			</section>
-			<section class="testimoniasl">
+			<section class="testimonials">
 				<h2>Testimonials</h2>
 				<p>Some happy customers have to say.</p>
 				<div class="flex">
@@ -166,7 +168,7 @@
 						</div>
 					</article>
 					<article>
-						<img src="./assets/img/testimonals2.png" alt="">
+						<img src="./assets/img/testimonials2.png" alt="">
 						<p>In at accumsan risus. Nam id volutpat ante.
 							Etiam vel mi mattis, vulputate nunc nec, sodales
 							nibh. Etiam nulla magna, gravida eget ultricies sit
@@ -177,7 +179,7 @@
 						</div>
 					</article>
 					<article>
-						<img src="./assets/img/testimonals3.png" alt="">
+						<img src="./assets/img/testimonials3.png" alt="">
 						<p>In at accumsan risus. Nam id volutpat ante.
 							Etiam vel mi mattis, vulputate nunc nec, sodales
 							nibh. Etiam nulla magna, gravida eget ultricies sit
@@ -196,17 +198,17 @@
 					<div>
 						<div>
 							<label for=""></label>
-							<input type="text">
+							<input type="text" placeholder="Your Name" required>
 						</div>
 						<div>
 							<label for=""></label>
-							<input type="email">
+							<input type="email" placeholder="Enter email" required>
 						</div>
 						<div>
 							<label for=""></label>
-							<textarea name="message" id="message" cols="30" rows="10">Write Something</textarea>
+							<textarea name="message" id="message" cols="20" rows="2" placeholder="Write Something" required></textarea>
 						</div>
-						<button>Say Hello</button>
+						<button type="submit" href="#" class="btn-transparent">Say Hello</button>
 					</div>
 				</form>
 			</section>
