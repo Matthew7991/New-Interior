@@ -148,6 +148,7 @@ h1 {
 	font-size: 3.5rem;
 	color: var(--color-text-default-bright);
 	font-weight: 400;
+	text-align: center;
 }
 
 h2 {
@@ -259,12 +260,13 @@ header > div p {
 }
 
 .gallery > div {
-	height: 300px;
+	/* height: 300px; */
 	overflow: hidden;
 	background-color: var(--bg-color-img);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	aspect-ratio: 3 / 2;
 }
 
 .gallery > div > div {
@@ -421,4 +423,46 @@ form button {
 footer {
 	background-color: var(--bg-color-footer);
 	color: var(--color-text-default-bright);
+}
+
+/* 
+===========================================
+                    media querries
+===========================================
+*/
+
+@media screen and (max-width: 900px) {
+	:root {
+		--padding-section-horizontal: 32px;
+		--padding-section-vertical: 32px;
+	}
+
+	.services .flex {
+		flex-direction: column;
+	}
+
+	.testimonials .flex {
+		flex-direction: column;
+	}
+
+	input,
+	textarea {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.services:not(.hero),
+	.lorem:not(.hero),
+	.contact:not(.hero) {
+		padding: var(--padding-section-vertical) 0;
+	}
+
+	.gallery {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.blog .flex {
+		flex-direction: column;
+	}
 }
