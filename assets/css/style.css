@@ -1,21 +1,25 @@
 @font-face {
 	font-family: "Alegreya Sans Medium";
 	src: url(../fonts/Alegreya_Sans/AlegreyaSans-Medium.ttf);
+	font-display: swap;
 }
 
 @font-face {
 	font-family: "Alegreya SC Regular";
 	src: url(../fonts/Alegreya_SC/AlegreyaSC-Regular.ttf);
+	font-display: swap;
 }
 
 @font-face {
 	font-family: "Alegreya SC Medium";
 	src: url(../fonts/Alegreya_SC/AlegreyaSC-Medium.ttf);
+	font-display: swap;
 }
 
 @font-face {
 	font-family: "Nixie One";
 	src: url(../fonts/Nixie_One/NixieOne-Regular.ttf);
+	font-display: swap;
 }
 
 /* 
@@ -493,3 +497,16 @@ footer {
 		opacity: 1;
 	}
 }
+
+/* TODO
+check buttons to change to anchor (a) tag
+add alt fonts
+check font-sizes that they are rem
+refactoring check if anything can be put together or simplified or made more clear aka naming
+convert img to webP or AVIF and add sizings
+add lazy img loading
+add hidden labels for inputs for screenreaders
+go through checklist
+
+
+*/
