@@ -99,8 +99,50 @@ ol {
 
 :root {
 	--font-default: Helvetica;
-	--font-accent-alegreya-sans-medium: "Alegreya Sans Medium";
+	--font-accent: "Alegreya Sans Medium";
 	--font-logo: "Alegreya SC Medium";
 	--font-hero-heading: "Nixie One";
 	--font-hero-heading-sub: "Alegreya SC Regular";
+	--padding-page: 128px;
+
+	--color-white: #fff;
+	--color-text-default: #6a6a6a;
+	--color-heading-default: #3a4f52;
+	--bg-color-img: #c3c9cc;
+	--bg-color-card: #00000033;
+	--color-links: #4da7ca;
+	--color-input: #cccccc;
+	--bg-color-input: #ffffff01;
+	--bg-color-footer: #2b3e51;
+	--bg-color-contact: #405162;
+	--bg-color-body: #f1f0f0;
+	--color-hero-heading-sub: #ffffff80;
 }
+
+body {
+	font-family: var(--font-default);
+	font-size: 0.875rem;
+	color: var(--color-default);
+	background-color: var(--bg-color-body);
+}
+
+h1 {
+	font-family: var(--font-hero-heading);
+	font-size: 3.5rem;
+}
+
+h2 {
+	font-family: var(--font-accent);
+	font-size: 2.25rem;
+	color: var(--color-heading-default);
+}
+
+a {
+	color: var(--color-links);
+}
+
+/* 
+===========================================
+                    header
+===========================================
+*/
