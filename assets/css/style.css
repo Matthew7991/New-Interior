@@ -1,24 +1,24 @@
 @font-face {
 	font-family: "Alegreya Sans Medium";
-	src: url(../fonts/Alegreya_Sans/AlegreyaSans-Medium.ttf);
+	src: url(../fonts/Alegreya_Sans/AlegreyaSans-Medium.ttf) format("truetype");
 	font-display: swap;
 }
 
 @font-face {
 	font-family: "Alegreya SC Regular";
-	src: url(../fonts/Alegreya_SC/AlegreyaSC-Regular.ttf);
+	src: url(../fonts/Alegreya_SC/AlegreyaSC-Regular.ttf) format("truetype");
 	font-display: swap;
 }
 
 @font-face {
 	font-family: "Alegreya SC Medium";
-	src: url(../fonts/Alegreya_SC/AlegreyaSC-Medium.ttf);
+	src: url(../fonts/Alegreya_SC/AlegreyaSC-Medium.ttf) format("truetype");
 	font-display: swap;
 }
 
 @font-face {
 	font-family: "Nixie One";
-	src: url(../fonts/Nixie_One/NixieOne-Regular.ttf);
+	src: url(../fonts/Nixie_One/NixieOne-Regular.ttf) format("truetype");
 	font-display: swap;
 }
 
@@ -102,16 +102,17 @@ ol {
 */
 
 :root {
-	--font-default: Helvetica;
-	--font-accent: "Alegreya Sans Medium";
-	--font-logo: "Alegreya SC Medium";
-	--font-hero-heading: "Nixie One";
-	--font-hero-heading-sub: "Alegreya SC Regular";
-	--padding-section-horizontal: 128px;
-	--padding-section-vertical: 64px;
+	--font-default: Helvetica, Arial, sans-serif;
+	--font-accent: "Alegreya Sans Medium", "Times New Roman", Times, serif;
+	--font-logo: "Alegreya SC Medium", "Times New Roman", Times, serif;
+	--font-hero-heading: "Nixie One", "Times New Roman", Times, serif;
+	--font-hero-heading-sub: "Alegreya SC Regular", "Times New Roman", Times,
+		serif;
+	--spacing-horizontal: 128px;
+	--spacing-vertical: 64px;
 
-	--color-text-default-bright: #fff;
-	--color-text-default: #6a6a6a;
+	--color-default-contrast: #fff;
+	--color-default: #6a6a6a;
 	--color-heading-default: #3a4f52;
 	--bg-color-img-hover: #02393bb3;
 	--bg-color-img: #c3c9cc;
@@ -128,13 +129,13 @@ ol {
 body {
 	font-family: var(--font-default);
 	font-size: 0.875rem;
-	color: var(--color-text-default);
+	color: var(--color-default);
 	background-color: var(--bg-color-body);
 }
 
 section:not(.hero),
 footer {
-	padding: var(--padding-section-vertical) var(--padding-section-horizontal);
+	padding: var(--spacing-vertical) var(--spacing-horizontal);
 }
 
 .card {
@@ -143,29 +144,48 @@ footer {
 
 .flex {
 	display: flex;
-	justify-content: space-around;
 	gap: 32px;
-	margin-top: var(--padding-section-vertical);
+	margin-top: var(--spacing-vertical);
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-between {
+	display: flex;
+	justify-content: space-between;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
 }
 
 h1 {
 	font-family: var(--font-hero-heading);
 	font-size: 3.5rem;
-	color: var(--color-text-default-bright);
+	color: var(--color-default-contrast);
 	font-weight: 400;
 	text-align: center;
 }
 
-h2 {
-	font-family: var(--font-accent);
-	font-size: 2.25rem;
+h2,
+h3,
+h4,
+h5,
+h6 {
 	color: var(--color-heading-default);
 	font-weight: 500;
 }
 
+h2 {
+	font-size: 2.25rem;
+}
+
 h3 {
-	font-family: var(--font-accent);
-	font-weight: 500;
 	font-size: 1.875rem;
 }
 
@@ -188,18 +208,18 @@ button {
 
 button:hover {
 	background-color: var(--bg-color-footer);
-	color: var(--color-text-default-bright);
+	color: var(--color-default-contrast);
 }
 
 .btn-transparent {
 	background-color: transparent;
-	color: var(--color-text-default-bright);
-	border-color: var(--color-text-default-bright);
+	color: var(--color-default-contrast);
+	border-color: var(--color-default-contrast);
 }
 
 .btn-transparent:hover {
-	background-color: var(--color-text-default-bright);
-	color: var(--color-text-default);
+	background-color: var(--color-default-contrast);
+	color: var(--color-default);
 }
 /* 
 ===========================================
@@ -209,30 +229,25 @@ button:hover {
 
 header {
 	height: 100vh;
-	background: url(../img/hero.png) center / cover;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	background: var(--bg-color-footer) url(../img/hero.png) center / cover;
 }
 
 nav {
 	position: absolute;
 	top: 0;
 	width: 100%;
-	display: flex;
-	justify-content: space-between;
 	padding: 32px;
 }
 
 nav a {
-	color: var(--color-text-default-bright);
+	color: var(--color-default-contrast);
 	font-family: var(--font-logo);
 	font-size: 2.25rem;
 }
 
 .hamburger {
 	font-size: 2.25rem;
-	color: var(--color-text-default-bright);
+	color: var(--color-default-contrast);
 	cursor: pointer;
 }
 
@@ -240,7 +255,7 @@ header > div p {
 	font-family: var(--font-hero-heading-sub);
 	color: var(--color-hero-heading-sub);
 	text-align: center;
-	font-size: 22px;
+	font-size: 1.375rem;
 }
 
 /* 
@@ -252,26 +267,17 @@ header > div p {
 ===========================================
 */
 
-.heading div {
-	display: flex;
-	justify-content: space-between;
-}
-
 .gallery {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 32px;
-	margin-top: var(--padding-section-vertical);
+	margin-top: var(--spacing-vertical);
 }
 
 .gallery > div {
 	position: relative;
-	/* height: 300px; */
 	overflow: hidden;
 	background-color: var(--bg-color-img);
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	aspect-ratio: 3 / 2;
 }
 
@@ -282,14 +288,15 @@ header > div p {
 	width: 100%;
 	height: 100%;
 	background-color: var(--bg-color-img-hover);
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	opacity: 0;
 }
 
 .gallery > div:hover > div {
 	opacity: 1;
+}
+
+.gallery img {
+	width: 100%;
 }
 
 .gallery > div > img {
@@ -307,26 +314,22 @@ header > div p {
 */
 
 .services {
-	background: url(../img/services.png) center / cover fixed;
+	background: var(--bg-color-footer) url(../img/services.png) center / cover
+		fixed;
 	text-align: center;
-	color: var(--color-text-default-bright);
+	color: var(--color-default-contrast);
 }
 
 .services h2 {
-	color: var(--color-text-default-bright);
+	color: var(--color-default-contrast);
 	margin-bottom: 16px;
 }
 .services .flex {
 	padding: 32px;
 }
 
-.services article {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
 .services article h3 {
+	color: var(--color-default-contrast);
 	margin-bottom: 32px;
 }
 
@@ -336,9 +339,6 @@ header > div p {
 ===========================================
 */
 
-.blog {
-}
-
 .date {
 	font-size: 0.875rem;
 	font-style: italic;
@@ -346,8 +346,6 @@ header > div p {
 
 .blog article div {
 	margin-top: 16px;
-	display: flex;
-	flex-direction: column;
 	gap: 16px;
 }
 
@@ -358,8 +356,9 @@ header > div p {
 */
 
 .lorem {
-	background: url(../img/4f6768d16f4d0914c7b5ddb743f600df2edc50bf.png) center /
-		cover fixed;
+	background: var(--bg-color-footer)
+		url(../img/4f6768d16f4d0914c7b5ddb743f600df2edc50bf.png) center / cover
+		fixed;
 }
 
 .lorem .card {
@@ -368,11 +367,11 @@ header > div p {
 }
 
 .lorem .card h2 {
-	color: var(--color-text-default-bright);
+	color: var(--color-default-contrast);
 }
 
 .lorem .card button {
-	margin-top: var(--padding-section-vertical);
+	margin-top: var(--spacing-vertical);
 }
 
 /* 
@@ -381,9 +380,6 @@ header > div p {
 ===========================================
 */
 .testimonials article {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	text-align: center;
 	gap: 16px;
 }
@@ -405,7 +401,8 @@ header > div p {
 */
 
 .contact {
-	background: url(../img/contact.png) center / cover fixed;
+	background: var(--bg-color-footer) url(../img/contact.png) center / cover
+		fixed;
 	text-align: center;
 }
 
@@ -414,17 +411,15 @@ form {
 }
 
 form h2 {
-	color: var(--color-text-default-bright);
+	color: var(--color-default-contrast);
 }
 
 form p {
-	color: var(--color-text-default-bright);
+	color: var(--color-default-contrast);
 }
 
 form > div {
-	margin-top: var(--padding-section-vertical);
-	display: flex;
-	flex-direction: column;
+	margin-top: var(--spacing-vertical);
 	gap: 16px;
 }
 
@@ -432,7 +427,7 @@ input,
 textarea {
 	min-width: 50%;
 	background-color: var(--bg-color-input);
-	color: var(--color-text-default-bright);
+	color: var(--color-default-contrast);
 	padding: 0.5em;
 	border: 1px solid var(--color-input);
 }
@@ -449,7 +444,12 @@ form button {
 
 footer {
 	background-color: var(--bg-color-footer);
-	color: var(--color-text-default-bright);
+	color: var(--color-default-contrast);
+}
+
+label {
+	position: absolute;
+	left: -100%;
 }
 
 /* 
@@ -460,8 +460,8 @@ footer {
 
 @media screen and (max-width: 900px) {
 	:root {
-		--padding-section-horizontal: 32px;
-		--padding-section-vertical: 32px;
+		--spacing-horizontal: 32px;
+		--spacing-vertical: 32px;
 	}
 
 	.services .flex {
@@ -482,14 +482,14 @@ footer {
 	.services:not(.hero),
 	.lorem:not(.hero),
 	.contact:not(.hero) {
-		padding: var(--padding-section-vertical) 0;
+		padding: var(--spacing-vertical) 0;
 	}
 
 	.gallery {
 		grid-template-columns: repeat(1, 1fr);
 	}
 
-	.blog .flex {
+	.flex {
 		flex-direction: column;
 	}
 
@@ -499,14 +499,12 @@ footer {
 }
 
 /* TODO
-check buttons to change to anchor (a) tag
-add alt fonts
-check font-sizes that they are rem
-refactoring check if anything can be put together or simplified or made more clear aka naming
+Buttons:
+	in form use input[type="submit"]
+	if they just link to another page use a
+	if it prefroms something like open a menu/popup/perform action use button
+
 convert img to webP or AVIF and add sizings
 add lazy img loading
-add hidden labels for inputs for screenreaders
 go through checklist
-
-
 */
