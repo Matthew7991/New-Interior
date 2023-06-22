@@ -229,7 +229,7 @@ button:hover {
 
 header {
 	height: 100vh;
-	background: var(--bg-color-footer) url(../img/hero.png) center / cover;
+	background: var(--bg-color-footer) url(../img/hero-2047w.webp) center / cover;
 }
 
 nav {
@@ -457,11 +457,20 @@ label {
                     media querries
 ===========================================
 */
+@media screen and (max-width: 1920px) {
+	header {
+		background-image: url(../img/hero-2047w.webp);
+	}
+}
 
 @media screen and (max-width: 900px) {
 	:root {
 		--spacing-horizontal: 32px;
 		--spacing-vertical: 32px;
+	}
+
+	header {
+		background-image: url(../img/hero-1365w.webp);
 	}
 
 	.services .flex {
@@ -479,6 +488,10 @@ label {
 }
 
 @media screen and (max-width: 500px) {
+	header {
+		background-image: url(../img/hero-910w.webp);
+	}
+
 	.services:not(.hero),
 	.lorem:not(.hero),
 	.contact:not(.hero) {
@@ -505,6 +518,5 @@ Buttons:
 	if it prefroms something like open a menu/popup/perform action use button
 
 convert img to webP or AVIF and add sizings
-add lazy img loading
 go through checklist
 */
